@@ -3,11 +3,13 @@ export class cuentaCorriente {
     numCuenta;
     #saldoCuenta;
     sucursal;
-    
+    cliente;
+
     constructor(){
         this.numCuenta = '';
         this.#saldoCuenta = 0;
         this.sucursal = '';
+        this.cliente = null;
     }
 
     depositoCuenta(valor){
@@ -34,5 +36,10 @@ export class cuentaCorriente {
 
     consultaSaldo(){
         return this.#saldoCuenta;
+    }
+
+    transferencia(valor, cuentaDestino){
+        this.retiroCuenta(valor);
+        cuentaDestino.depositoCuenta(valor);
     }
 }

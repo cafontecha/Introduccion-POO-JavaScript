@@ -8,20 +8,29 @@ cliente1.iDCliente = '123456';
 
 const cuentaCorriente1 = new cuentaCorriente(); 
 cuentaCorriente1.numCuenta = '12346';
-//Al poner el atributo privado, no se pueden hacer operaciones 
-//fuera del instanciamiento de la clase y metodos
-//cuentaCorriente1.#saldoCuenta = 1000;
 cuentaCorriente1.sucursal = "Bogota";
-
+cuentaCorriente1.cliente = cliente1;
 
 
 let saldo = cuentaCorriente1.consultaSaldo();
-
 saldo = cuentaCorriente1.depositoCuenta(600);
 
-saldo = cuentaCorriente1.retiroCuenta(50);
 
-saldo = cuentaCorriente1.retiroCuenta(1000);
+const clienteAndres = new Cliente();
+clienteAndres.nombreCliente = 'Camilo';
+clienteAndres.iDCliente = '123456';
 
-console.log(saldo);
+const cuentaAndres = new cuentaCorriente(); 
+cuentaAndres.numCuenta = '12346';
+cuentaAndres.sucursal = "Bogota";
+cuentaAndres.cliente = clienteAndres;
+
+
+cuentaCorriente1.transferencia(50,cuentaAndres);
+
+console.log(`saldo cuentaCorriente1 = ${saldo}`);
+
+const saldoAndres = cuentaAndres.consultaSaldo();
+console.log(`Saldo Cuenta de ${clienteAndres.nombreCliente} = ${saldoAndres}`);
+
 
