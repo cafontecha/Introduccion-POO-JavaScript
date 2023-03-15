@@ -1,37 +1,5 @@
-class Cliente{
-    nombreCliente;
-    iDCliente;
-}
-class cuentaCorriente {
-    numCuenta;
-    #saldoCuenta;
-    sucursal;
-    
-    constructor(){
-        this.numCuenta = '';
-        this.#saldoCuenta = 0;
-        this.sucursal = '';
-    }
-
-    depositoCuenta(valor){
-        if (valor > 0 ){
-            this.#saldoCuenta+=valor;
-            console.log(`Tu nuevo saldo es ${this.#saldoCuenta}`);
-        }
-        else{
-            console.log(`debes depositar una cantidad mayor a ${valor}`);
-        }
-    }
-
-    retiroCuenta(valor){
-        if (this.#saldoCuenta<=valor){
-            console.log(`No cuentas con el saldo a retirar, tu saldo es de ${this.#saldoCuenta}`);
-        }else{
-            this.#saldoCuenta -= valor;
-            console.log(`retiro exitoso, tu nuevo saldo es de ${this.#saldoCuenta}`);
-        } 
-    }
-}
+import {Cliente} from './Cliente.js';
+import {cuentaCorriente} from './CuentaCorriente.js';
 
 
 const cliente1 = new Cliente();
@@ -46,9 +14,14 @@ cuentaCorriente1.numCuenta = '12346';
 cuentaCorriente1.sucursal = "Bogota";
 
 
-console.log(cuentaCorriente1);
 
+let saldo = cuentaCorriente1.consultaSaldo();
 
+saldo = cuentaCorriente1.depositoCuenta(600);
 
-cuentaCorriente1.retiroCuenta(500);
-console.log(cuentaCorriente1);
+saldo = cuentaCorriente1.retiroCuenta(50);
+
+saldo = cuentaCorriente1.retiroCuenta(1000);
+
+console.log(saldo);
+

@@ -1,0 +1,26 @@
+{
+  "name": "cuentasbanco",
+  "version": "1.0.0",
+  "description": "Practicas curso allura - Introducción a la POO - Gestión de cuentas corrientes del banco ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cafontecha/Introduccion-POO-JavaScript.git"
+  },
+  "keywords": [
+    "Practica",
+    "Curso",
+    "Allura",
+    "JavaScript"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cafontecha/Introduccion-POO-JavaScript/issues"
+  },
+  "homepage": "https://github.com/cafontecha/Introduccion-POO-JavaScript#readme",
+  "type": "module"
+}
